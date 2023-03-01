@@ -10,5 +10,5 @@ get_response = requests.get(endpoint)
 
 if __name__=="__main__":
     if get_response.status_code == 200:
-        print(get_response.headers)
+        # print(get_response.headers)
         print(get_response.json())
