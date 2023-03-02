@@ -2,13 +2,15 @@
 
 import requests
 
-endpoint = "http://localhost:8000/api"
+endpoint = "http://localhost:8000/api/"
 
-get_response = requests.get(endpoint)
+get_response = requests.post(endpoint,
+                             json={"title": "12354",
+                                   "content": "Hello World",
+                                   "price": "abc123"})
 # HTTP Request -> HTML
 # REST API HTTP Request -> JSON
 
 if __name__=="__main__":
-    if get_response.status_code == 200:
-        # print(get_response.headers)
-        print(get_response.json())
+    print(get_response.json())
+        
