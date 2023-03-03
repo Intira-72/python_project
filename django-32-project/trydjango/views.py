@@ -1,11 +1,13 @@
 from django.http import HttpResponse
 import random
 
+from asticles.models import Article
+
 
 def home(request):
-    number = random.randint(10, 123456)
-
-    u_name = "Justin"
-    html_str = f"""<h1>Hello, {u_name} - {number}.</h1>"""
+    my_post = Article.objects.all().order_by("?").first()
+    
+    html_str = f"""<h1>Title: {my_post.title}</h1>
+                    <p>content: {my_post.content}</p>"""
     
     return HttpResponse(html_str)
