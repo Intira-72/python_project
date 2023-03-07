@@ -2,6 +2,8 @@
 
 {% block content %}
     <ul>
+        <h1>{{ article_obj.title }}</h1>
+        <p>{{ article_obj.content }}</p>
         {% for article_obj in article_queryset %}
             <li><a href="article/{{ article_obj.id }}/">{{ article_obj.title }}</a></li>
         {% endfor %}
