@@ -7,6 +7,12 @@
     <title>Home</title>
 </head>
 <body>
+    <h1>My Blog</h1>
+    <form action="/articles/" method="GET">
+        <input type="text" name="q">
+        <input type="submit">
+    </form>
+
     {% block content %}
     {% endblock content %}
 </body>
