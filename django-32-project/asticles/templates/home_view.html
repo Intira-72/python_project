@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for article_obj in article_queryset %}
-        <h1>{{ article_obj.title }}</h1>
-        <p>{{ article_obj.content }}</p>
-    {% endfor %}
+    <ul>
+        {% for article_obj in article_queryset %}
+            <li><a href="article/{{ article_obj.id }}/">{{ article_obj.title }}</a></li>
+        {% endfor %}
+    </ul>    
 {% endblock content %}

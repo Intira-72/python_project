@@ -4,7 +4,7 @@ from django.template.loader import render_to_string, get_template
 from asticles.models import Article
 
 
-def home(request):
+def home(request, *args, **kwargs):
     article_queryset = Article.objects.all()
 
     context = {'article_queryset': article_queryset}
