@@ -31,3 +31,19 @@ def article_search_view(request):
     }
 
     return render(request, "article_search_view.html", context=context)
+
+
+# Article Create View
+# @csrf_exempt
+def article_create_form(request):    
+    context = {}
+
+    if request.method == "POST":
+        title = request.POST['title']
+        content = request.POST['content']
+
+        article_obj = Article.objects.create(title=title, content=content)
+        context['article_obj'] = article_obj
+        context['created'] = True    
+
+    return render(request, "article_create_form.html", context=context)
