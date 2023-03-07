@@ -5,13 +5,9 @@ from asticles.models import Article
 
 
 def home(request):
-    article_obj = Article.objects.all().order_by("?").first()
+    article_queryset = Article.objects.all()
 
-    context = {
-        'id': article_obj.id,
-        'title': article_obj.title,
-        'content': article_obj.content
-    }
+    context = {'article_queryset': article_queryset}
 
     tmpl = get_template("home_view.html")
     html_str = tmpl.render(context=context)
